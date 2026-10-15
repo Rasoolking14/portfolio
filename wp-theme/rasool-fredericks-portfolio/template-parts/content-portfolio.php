@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rasool Fredericks - Senior Full-Stack Engineer</title>
+    <title>Rasool Fredericks - Front-End Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&family=Roboto:wght@500&display=swap" rel="stylesheet">
@@ -46,7 +46,7 @@
                         <li><a href="#experience" class="nav__link">Experience</a></li>
                         <li><a href="#skills" class="nav__link">Skills</a></li>
                         <li><a href="#projects" class="nav__link">Projects</a></li>
-                        <li><a href="#certifications" class="nav__link">Certifications</a></li>
+                        <li><a href="#education" class="nav__link">Education</a></li>
                         <li><a href="#contact" class="nav__link">Contact</a></li>
                     </ul>
                     <a href="<?php echo get_template_directory_uri(); ?>/assets/Rasool_Fredericks_Resume.pdf" target="_blank" rel="noopener" class="nav__cta">Resume / CV</a>
@@ -60,8 +60,8 @@
         <section class="hero" id="hero">
             <div class="container hero__grid">
                 <div class="hero__content">
-                    <h1 class="hero__headline">Senior Full-Stack Engineer crafting scalable web applications.</h1>
-                    <p class="hero__subheadline">Specializing in cloud-native architecture, high-performance web systems, and modern full-stack developer experience.</p>
+                    <h1 class="hero__headline">Front-End Developer building clean, responsive web experiences.</h1>
+                    <p class="hero__subheadline">Currently studying Web / Front-End Development at Life-Choices Academy, with 1.5 years of hands-on, project-based experience turning designs into polished interfaces.</p>
                     <div class="hero__actions">
                         <a href="#projects" class="btn btn--primary">View Work</a>
                         <a href="#contact" class="btn btn--outline">Contact Me</a>
@@ -71,22 +71,22 @@
                     <div class="hero__scene">
                         <div class="glass-card gc1">
                             <div class="gc__code">
-                                <span class="gc__line">const api = new Gateway()</span>
-                                <span class="gc__line">await api.auth()</span>
-                                <span class="gc__line gc__line--accent">{ data: results }</span>
+                                <span class="gc__line">const app = createApp()</span>
+                                <span class="gc__line">app.mount('#app')</span>
+                                <span class="gc__line gc__line--accent">{ ui: 'ready' }</span>
                             </div>
                         </div>
                         <div class="glass-card gc2">
                             <div class="gc__dots">
                                 <span></span><span></span><span></span>
                             </div>
-                            <span class="gc__label">Microservices</span>
+                            <span class="gc__label">Components</span>
                         </div>
                         <div class="glass-card gc3">
                             <div class="gc__bars">
                                 <span></span><span></span><span></span><span></span>
                             </div>
-                            <span class="gc__label">Edge Cache</span>
+                            <span class="gc__label">Responsive UI</span>
                         </div>
                         <div class="node n1"></div>
                         <div class="node n2"></div>
@@ -112,24 +112,23 @@
                 </div>
                 <div class="about__right">
                     <h2 class="section__title">About Me</h2>
-                    <p class="section__lead">With over 8 years of engineering experience, I architect resilient full-stack systems and intuitive front-end interfaces. I focus on clean code, performant database design, and end-to-end cloud infrastructure.</p>
-                    <p class="section__lead">I do not focus on forex trading alone — I also teach trading, helping others build solid technical and risk management skills to trade with confidence.</p>
+                    <p class="section__lead">I'm a front-end developer with 1.5 years of hands-on experience building responsive, user-focused web interfaces. I'm currently studying Web / Front-End Development at Life-Choices Academy, where I sharpen my skills through practical, project-based coursework.</p>
                     <h3 class="about__subtitle">Professional Overview</h3>
                     <div class="about__cards">
                         <article class="info-card">
                             <div class="info-card__icon"><i class="fa-solid fa-bolt"></i></div>
-                            <h4 class="info-card__title">8+ Years Experience</h4>
-                            <p class="info-card__text">Building scalable enterprise SaaS applications.</p>
+                            <h4 class="info-card__title">1.5 Years Hands-On</h4>
+                            <p class="info-card__text">Building responsive interfaces through project-based work.</p>
                         </article>
                         <article class="info-card">
                             <div class="info-card__icon"><i class="fa-solid fa-layer-group"></i></div>
-                            <h4 class="info-card__title">Full-Stack Mastery</h4>
-                            <p class="info-card__text">React, Next.js, Node.js, TypeScript &amp; PostgreSQL.</p>
+                            <h4 class="info-card__title">Front-End Focus</h4>
+                            <p class="info-card__text">HTML, CSS, JavaScript, React &amp; Vue.js.</p>
                         </article>
                         <article class="info-card">
-                            <div class="info-card__icon"><i class="fa-solid fa-cloud"></i></div>
-                            <h4 class="info-card__title">Cloud Architecture</h4>
-                            <p class="info-card__text">AWS, Docker, CI/CD pipelines, and microservices.</p>
+                            <div class="info-card__icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                            <h4 class="info-card__title">Web Development Student</h4>
+                            <p class="info-card__text">Studying Web / Front-End Development at Life-Choices Academy.</p>
                         </article>
                     </div>
                 </div>
@@ -140,20 +139,20 @@
         <section class="section experience" id="experience">
             <div class="container">
                 <h2 class="section__title">Experience</h2>
-                <p class="section__lead">A track record of architecting, shipping and scaling production systems.</p>
+                <p class="section__lead">Hands-on experience building for the web, from coursework to real projects.</p>
                 <ol class="timeline">
                     <li class="timeline__item">
                         <div class="timeline__marker" aria-hidden="true"></div>
                         <div class="timeline__content">
                             <div class="timeline__head">
-                                <h3 class="timeline__role">Senior Full-Stack Engineer</h3>
-                                <span class="timeline__period">2019 &ndash; Present</span>
+                                <h3 class="timeline__role">Front-End Developer</h3>
+                                <span class="timeline__period">2025 &ndash; Present</span>
                             </div>
                             <ul class="timeline__points">
-                                <li>Architect and deliver scalable, multi-tenant SaaS platforms with event-driven APIs and granular role-based access control.</li>
-                                <li>Design high-throughput, idempotent payment and data workflows with observability and automated reconciliation.</li>
-                                <li>Build Kubernetes-native CI/CD pipelines using GitOps, preview environments, policy checks, and automated rollbacks.</li>
-                                <li>Lead cloud infrastructure on AWS with Docker, CI/CD automation, and microservices architecture.</li>
+                                <li>Build responsive, accessible interfaces from design mockups using HTML, CSS and JavaScript.</li>
+                                <li>Develop reusable UI components with modern frameworks such as React and Vue.js.</li>
+                                <li>Collaborate in team projects using Git and GitHub, managing branches and pull requests.</li>
+                                <li>Write clean, maintainable code and ensure consistent, cross-browser layouts.</li>
                             </ul>
                         </div>
                     </li>
@@ -161,13 +160,13 @@
                         <div class="timeline__marker" aria-hidden="true"></div>
                         <div class="timeline__content">
                             <div class="timeline__head">
-                                <h3 class="timeline__role">Full-Stack Engineer</h3>
-                                <span class="timeline__period">2016 &ndash; 2019</span>
+                                <h3 class="timeline__role">Web / Front-End Development Student</h3>
+                                <span class="timeline__period">2025 &ndash; Present</span>
                             </div>
                             <ul class="timeline__points">
-                                <li>Developed and maintained modern web applications using React, Node.js, and PostgreSQL.</li>
-                                <li>Improved front-end performance and developer experience through type-safe tooling and standardized scaffolding.</li>
-                                <li>Collaborated on database design, API development, and deployment automation.</li>
+                                <li>Studying Web / Front-End Development at Life-Choices Academy.</li>
+                                <li>Apply best practices in responsive design, accessibility and version control.</li>
+                                <li>Complete practical projects that simulate real-world development workflows.</li>
                             </ul>
                         </div>
                     </li>
@@ -181,43 +180,43 @@
                 <h2 class="section__title">Skills</h2>
                 <div class="skills__grid">
                     <article class="skill-card">
-                        <h3 class="skill-card__title">Frontend</h3>
+                        <h3 class="skill-card__title">Languages</h3>
+                        <div class="skill-card__items">
+                            <span class="skill-pill"><i class="fab fa-html5"></i> HTML5</span>
+                            <span class="skill-pill"><i class="fab fa-css3-alt"></i> CSS3</span>
+                            <span class="skill-pill"><i class="fab fa-js"></i> JavaScript</span>
+                            <span class="skill-pill"><i class="fa-solid fa-code"></i> TypeScript</span>
+                            <span class="skill-pill"><i class="fa-solid fa-hashtag"></i> Markdown</span>
+                        </div>
+                    </article>
+                    <article class="skill-card">
+                        <h3 class="skill-card__title">Frameworks &amp; Libraries</h3>
                         <div class="skill-card__items">
                             <span class="skill-pill"><i class="fab fa-react"></i> React</span>
-                            <span class="skill-pill"><i class="fab fa-js-square"></i> Next.js</span>
-                            <span class="skill-pill"><i class="fa-solid fa-code"></i> TypeScript</span>
-                            <span class="skill-pill"><i class="fab fa-css3-alt"></i> Tailwind CSS</span>
-                            <span class="skill-pill"><i class="fa-solid fa-diagram-project"></i> Redux</span>
+                            <span class="skill-pill"><i class="fab fa-vuejs"></i> Vue.js</span>
+                            <span class="skill-pill"><i class="fab fa-bootstrap"></i> Bootstrap</span>
+                            <span class="skill-pill"><i class="fa-solid fa-wind"></i> Tailwind CSS</span>
+                            <span class="skill-pill"><i class="fab fa-sass"></i> SASS</span>
                         </div>
                     </article>
                     <article class="skill-card">
-                        <h3 class="skill-card__title">Backend</h3>
-                        <div class="skill-card__items">
-                            <span class="skill-pill"><i class="fab fa-node-js"></i> Node.js</span>
-                            <span class="skill-pill"><i class="fa-solid fa-server"></i> Express</span>
-                            <span class="skill-pill"><i class="fab fa-python"></i> Python</span>
-                            <span class="skill-pill"><i class="fa-solid fa-project-diagram"></i> GraphQL</span>
-                            <span class="skill-pill"><i class="fa-solid fa-plug"></i> REST APIs</span>
-                        </div>
-                    </article>
-                    <article class="skill-card">
-                        <h3 class="skill-card__title">Database &amp; Cloud</h3>
-                        <div class="skill-card__items">
-                            <span class="skill-pill"><i class="fa-solid fa-database"></i> PostgreSQL</span>
-                            <span class="skill-pill"><i class="fa-solid fa-leaf"></i> MongoDB</span>
-                            <span class="skill-pill"><i class="fab fa-aws"></i> AWS</span>
-                            <span class="skill-pill"><i class="fab fa-docker"></i> Docker</span>
-                            <span class="skill-pill"><i class="fa-solid fa-layer-group"></i> Redis</span>
-                        </div>
-                    </article>
-                    <article class="skill-card">
-                        <h3 class="skill-card__title">DevOps &amp; Tools</h3>
+                        <h3 class="skill-card__title">Front-End Practices</h3>
                         <div class="skill-card__items">
                             <span class="skill-pill"><i class="fab fa-git-alt"></i> Git</span>
-                            <span class="skill-pill"><i class="fa-solid fa-rocket"></i> CI/CD</span>
-                            <span class="skill-pill"><i class="fa-solid fa-vial"></i> Jest</span>
-                            <span class="skill-pill"><i class="fa-solid fa-cubes"></i> Kubernetes</span>
-                            <span class="skill-pill"><i class="fa-solid fa-code-branch"></i> Terraform</span>
+                            <span class="skill-pill"><i class="fab fa-github"></i> GitHub</span>
+                            <span class="skill-pill"><i class="fa-solid fa-code"></i> VS Code</span>
+                            <span class="skill-pill"><i class="fab fa-npm"></i> npm</span>
+                            <span class="skill-pill"><i class="fab fa-figma"></i> Figma</span>
+                        </div>
+                    </article>
+                    <article class="skill-card">
+                        <h3 class="skill-card__title">Tools &amp; Workflow</h3>
+                        <div class="skill-card__items">
+                            <span class="skill-pill"><i class="fa-solid fa-mobile-screen-button"></i> Responsive Design</span>
+                            <span class="skill-pill"><i class="fa-solid fa-universal-access"></i> Accessibility</span>
+                            <span class="skill-pill"><i class="fa-solid fa-plug"></i> REST APIs</span>
+                            <span class="skill-pill"><i class="fa-solid fa-pen-ruler"></i> UI/UX Basics</span>
+                            <span class="skill-pill"><i class="fa-solid fa-display"></i> Cross-Browser Testing</span>
                         </div>
                     </article>
                 </div>
@@ -273,30 +272,30 @@
             </div>
         </section>
 
-        <!-- Certifications Section -->
-        <section class="section certs" id="certifications">
+        <!-- Education Section -->
+        <section class="section certs" id="education">
             <div class="container">
-                <h2 class="section__title">Certifications</h2>
+                <h2 class="section__title">Education</h2>
                 <div class="certs__grid">
                     <article class="cert-card">
-                        <div class="cert-card__icon"><i class="fab fa-aws"></i></div>
+                        <div class="cert-card__icon"><i class="fa-solid fa-graduation-cap"></i></div>
                         <div class="cert-card__body">
-                            <h3 class="cert-card__title">AWS Certified Solutions Architect - Associate</h3>
-                            <p class="cert-card__meta">Issued: 2024 • Amazon Web Services</p>
+                            <h3 class="cert-card__title">Web / Front-End Development</h3>
+                            <p class="cert-card__meta">Life-Choices Academy • In Progress</p>
                         </div>
                     </article>
                     <article class="cert-card">
-                        <div class="cert-card__icon"><i class="fa-solid fa-certificate"></i></div>
+                        <div class="cert-card__icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
                         <div class="cert-card__body">
-                            <h3 class="cert-card__title">Meta Senior Full-Stack Engineer Certificate</h3>
-                            <p class="cert-card__meta">Issued: 2025 • Meta</p>
+                            <h3 class="cert-card__title">Responsive Web Design</h3>
+                            <p class="cert-card__meta">Life-Choices Academy • Coursework</p>
                         </div>
                     </article>
                     <article class="cert-card">
-                        <div class="cert-card__icon"><i class="fa-solid fa-cubes"></i></div>
+                        <div class="cert-card__icon"><i class="fa-solid fa-laptop-code"></i></div>
                         <div class="cert-card__body">
-                            <h3 class="cert-card__title">Certified Kubernetes Application Developer (CKAD)</h3>
-                            <p class="cert-card__meta">Issued: 2023 • CNCF/Linux Foundation</p>
+                            <h3 class="cert-card__title">Project-Based Learning</h3>
+                            <p class="cert-card__meta">Academy &amp; personal projects • Ongoing</p>
                         </div>
                     </article>
                 </div>
@@ -312,12 +311,11 @@
                     <ul class="contact__list">
                         <li><i class="fa-solid fa-envelope"></i> <a href="mailto:fredericksrasool11@gmail.com">fredericksrasool11@gmail.com</a></li>
                         <li><i class="fa-solid fa-location-dot"></i> Remote / Worldwide</li>
-                        <li><i class="fa-solid fa-phone"></i> 0678020783</li>
+                        <li><i class="fa-solid fa-phone"></i> +27 67 802 0783</li>
                     </ul>
                     <div class="contact__socials">
                         <a href="https://www.linkedin.com/in/rasool-fredericks" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                         <a href="https://github.com/Rasoolking14" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://x.com/" target="_blank" rel="noopener" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
                     </div>
                 </div>
                 <div class="contact__form-wrap">
@@ -354,7 +352,7 @@
     <footer class="footer">
         <div class="container footer__inner">
             <p class="footer__copy">&copy; 2026 Rasool Fredericks. All rights reserved.</p>
-            <p class="footer__copy" style="opacity:0.7">Last updated: Oct 12, 2026</p>
+            <p class="footer__copy" style="opacity:0.7">Last updated: Oct 15, 2026</p>
             <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
         </div>
     </footer>

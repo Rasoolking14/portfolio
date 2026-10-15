@@ -47,8 +47,8 @@
       <section class="hero" id="hero">
         <div class="container hero__grid">
           <div class="hero__content">
-            <h1 class="hero__headline">Senior Full-Stack Engineer crafting scalable web applications.</h1>
-            <p class="hero__subheadline">Specializing in cloud-native architecture, high-performance web systems, and modern full-stack developer experience.</p>
+            <h1 class="hero__headline">Front-End Developer building clean, responsive web experiences.</h1>
+            <p class="hero__subheadline">Currently studying Web / Front-End Development at Life-Choices Academy, with 1.5 years of hands-on, project-based experience turning designs into polished interfaces.</p>
             <div class="hero__actions">
               <a href="#projects" class="btn btn--primary">View Work</a>
               <a href="#contact" class="btn btn--outline">Contact Me</a>
@@ -58,22 +58,22 @@
             <div class="hero__scene">
               <div class="glass-card gc1">
                 <div class="gc__code">
-                  <span class="gc__line">const api = new Gateway()</span>
-                  <span class="gc__line">await api.auth()</span>
-                  <span class="gc__line gc__line--accent">{ data: results }</span>
+                  <span class="gc__line">const app = createApp()</span>
+                  <span class="gc__line">app.mount('#app')</span>
+                  <span class="gc__line gc__line--accent">{ ui: 'ready' }</span>
                 </div>
               </div>
               <div class="glass-card gc2">
                 <div class="gc__dots">
                   <span></span><span></span><span></span>
                 </div>
-                <span class="gc__label">Microservices</span>
+                <span class="gc__label">Components</span>
               </div>
               <div class="glass-card gc3">
                 <div class="gc__bars">
                   <span></span><span></span><span></span><span></span>
                 </div>
-                <span class="gc__label">Edge Cache</span>
+                <span class="gc__label">Responsive UI</span>
               </div>
               <div class="node n1"></div>
               <div class="node n2"></div>
@@ -102,8 +102,7 @@
           </div>
           <div class="about__right">
             <h2 class="section__title">About Me</h2>
-            <p class="section__lead">With over 8 years of engineering experience, I architect resilient full-stack systems and intuitive front-end interfaces. I focus on clean code, performant database design, and end-to-end cloud infrastructure.</p>
-            <p class="section__lead">I do not focus on forex trading alone &mdash; I also teach trading, helping others build solid technical and risk management skills to trade with confidence.</p>
+            <p class="section__lead">I'm a front-end developer with 1.5 years of hands-on experience building responsive, user-focused web interfaces. I'm currently studying Web / Front-End Development at Life-Choices Academy, where I sharpen my skills through practical, project-based coursework.</p>
             <h3 class="about__subtitle">Professional Overview</h3>
             <div class="about__cards">
               <article v-for="card in infoCards" :key="card.title" class="info-card">
@@ -119,7 +118,7 @@
       <section class="section experience" id="experience">
         <div class="container">
           <h2 class="section__title">Experience</h2>
-          <p class="section__lead">A track record of architecting, shipping and scaling production systems.</p>
+          <p class="section__lead">Hands-on experience building for the web, from coursework to real projects.</p>
           <ol class="timeline">
             <li v-for="exp in experiences" :key="exp.role + exp.period" class="timeline__item">
               <div class="timeline__marker" aria-hidden="true"></div>
@@ -176,9 +175,9 @@
         </div>
       </section>
 
-      <section class="section certs" id="certifications">
+      <section class="section certs" id="education">
         <div class="container">
-          <h2 class="section__title">Certifications</h2>
+          <h2 class="section__title">Education</h2>
           <div class="certs__grid">
             <article v-for="cert in certifications" :key="cert.title" class="cert-card">
               <div class="cert-card__icon"><i :class="cert.icon"></i></div>
@@ -199,7 +198,7 @@
             <ul class="contact__list">
               <li><i class="fa-solid fa-envelope"></i> <a href="mailto:fredericksrasool11@gmail.com">fredericksrasool11@gmail.com</a></li>
               <li><i class="fa-solid fa-location-dot"></i> Remote / Worldwide</li>
-              <li><i class="fa-solid fa-phone"></i> 0678020783</li>
+              <li><i class="fa-solid fa-phone"></i> +27 67 802 0783</li>
             </ul>
             <div class="contact__socials">
               <a v-for="social in socials" :key="social.label" :href="social.href" target="_blank" rel="noopener" :aria-label="social.label"><i :class="social.icon"></i></a>
@@ -234,7 +233,7 @@
     <footer class="footer">
       <div class="container footer__inner">
         <p class="footer__copy">&copy; 2026 Rasool Fredericks. All rights reserved.</p>
-        <p class="footer__copy" style="opacity:0.7">Last updated: Oct 12, 2026</p>
+        <p class="footer__copy" style="opacity:0.7">Last updated: Oct 15, 2026</p>
         <button ref="backToTopRef" class="back-to-top" :class="{ visible: showBackToTop }" aria-label="Back to top" @click="scrollToTop"><i class="fa-solid fa-arrow-up"></i></button>
       </div>
     </footer>
@@ -251,7 +250,7 @@ const menuOpen = ref(false);
 const showBackToTop = ref(false);
 const activeSection = ref('');
 
-const sectionIds = ['about', 'experience', 'skills', 'projects', 'certifications', 'contact'];
+const sectionIds = ['about', 'experience', 'skills', 'projects', 'education', 'contact'];
 const isLight = ref(false);
 const isFlipped = ref(false);
 const profileImg = '/assets/img/profile.png';
@@ -272,55 +271,55 @@ const navLinks = [
   { href: '#experience', label: 'Experience' },
   { href: '#skills', label: 'Skills' },
   { href: '#projects', label: 'Projects' },
-  { href: '#certifications', label: 'Certifications' },
+  { href: '#education', label: 'Education' },
   { href: '#contact', label: 'Contact' },
 ];
 
 const infoCards = [
-  { icon: 'fa-solid fa-bolt', title: '8+ Years Experience', text: 'Building scalable enterprise SaaS applications.' },
-  { icon: 'fa-solid fa-layer-group', title: 'Full-Stack Mastery', text: 'React, Next.js, Node.js, TypeScript & PostgreSQL.' },
-  { icon: 'fa-solid fa-cloud', title: 'Cloud Architecture', text: 'AWS, Docker, CI/CD pipelines, and microservices.' },
+  { icon: 'fa-solid fa-bolt', title: '1.5 Years Hands-On', text: 'Building responsive interfaces through project-based work.' },
+  { icon: 'fa-solid fa-layer-group', title: 'Front-End Focus', text: 'HTML, CSS, JavaScript, React & Vue.js.' },
+  { icon: 'fa-solid fa-graduation-cap', title: 'Web Development Student', text: 'Studying Web / Front-End Development at Life-Choices Academy.' },
 ];
 
 const skillGroups = [
   {
-    title: 'Frontend',
+    title: 'Languages',
+    items: [
+      { icon: 'fab fa-html5', label: 'HTML5' },
+      { icon: 'fab fa-css3-alt', label: 'CSS3' },
+      { icon: 'fab fa-js', label: 'JavaScript' },
+      { icon: 'fa-solid fa-code', label: 'TypeScript' },
+      { icon: 'fa-solid fa-hashtag', label: 'Markdown' },
+    ],
+  },
+  {
+    title: 'Frameworks & Libraries',
     items: [
       { icon: 'fab fa-react', label: 'React' },
-      { icon: 'fab fa-js-square', label: 'Next.js' },
-      { icon: 'fa-solid fa-code', label: 'TypeScript' },
-      { icon: 'fab fa-css3-alt', label: 'Tailwind CSS' },
-      { icon: 'fa-solid fa-diagram-project', label: 'Redux' },
+      { icon: 'fab fa-vuejs', label: 'Vue.js' },
+      { icon: 'fab fa-bootstrap', label: 'Bootstrap' },
+      { icon: 'fa-solid fa-wind', label: 'Tailwind CSS' },
+      { icon: 'fab fa-sass', label: 'SASS' },
     ],
   },
   {
-    title: 'Backend',
-    items: [
-      { icon: 'fab fa-node-js', label: 'Node.js' },
-      { icon: 'fa-solid fa-server', label: 'Express' },
-      { icon: 'fab fa-python', label: 'Python' },
-      { icon: 'fa-solid fa-project-diagram', label: 'GraphQL' },
-      { icon: 'fa-solid fa-plug', label: 'REST APIs' },
-    ],
-  },
-  {
-    title: 'Database & Cloud',
-    items: [
-      { icon: 'fa-solid fa-database', label: 'PostgreSQL' },
-      { icon: 'fa-solid fa-leaf', label: 'MongoDB' },
-      { icon: 'fab fa-aws', label: 'AWS' },
-      { icon: 'fab fa-docker', label: 'Docker' },
-      { icon: 'fa-solid fa-layer-group', label: 'Redis' },
-    ],
-  },
-  {
-    title: 'DevOps & Tools',
+    title: 'Front-End Practices',
     items: [
       { icon: 'fab fa-git-alt', label: 'Git' },
-      { icon: 'fa-solid fa-rocket', label: 'CI/CD' },
-      { icon: 'fa-solid fa-vial', label: 'Jest' },
-      { icon: 'fa-solid fa-cubes', label: 'Kubernetes' },
-      { icon: 'fa-solid fa-code-branch', label: 'Terraform' },
+      { icon: 'fab fa-github', label: 'GitHub' },
+      { icon: 'fa-solid fa-code', label: 'VS Code' },
+      { icon: 'fab fa-npm', label: 'npm' },
+      { icon: 'fab fa-figma', label: 'Figma' },
+    ],
+  },
+  {
+    title: 'Tools & Workflow',
+    items: [
+      { icon: 'fa-solid fa-mobile-screen-button', label: 'Responsive Design' },
+      { icon: 'fa-solid fa-universal-access', label: 'Accessibility' },
+      { icon: 'fa-solid fa-plug', label: 'REST APIs' },
+      { icon: 'fa-solid fa-pen-ruler', label: 'UI/UX Basics' },
+      { icon: 'fa-solid fa-display', label: 'Cross-Browser Testing' },
     ],
   },
 ];
@@ -346,35 +345,34 @@ const projects = [
 ];
 
 const certifications = [
-  { icon: 'fab fa-aws', title: 'AWS Certified Solutions Architect - Associate', meta: 'Issued: 2024 \u2022 Amazon Web Services' },
-  { icon: 'fa-solid fa-certificate', title: 'Meta Senior Full-Stack Engineer Certificate', meta: 'Issued: 2025 \u2022 Meta' },
-  { icon: 'fa-solid fa-cubes', title: 'Certified Kubernetes Application Developer (CKAD)', meta: 'Issued: 2023 \u2022 CNCF/Linux Foundation' },
+  { icon: 'fa-solid fa-graduation-cap', title: 'Web / Front-End Development', meta: 'Life-Choices Academy \u2022 In Progress' },
+  { icon: 'fa-solid fa-mobile-screen-button', title: 'Responsive Web Design', meta: 'Life-Choices Academy \u2022 Coursework' },
+  { icon: 'fa-solid fa-laptop-code', title: 'Project-Based Learning', meta: 'Academy & personal projects \u2022 Ongoing' },
 ];
 
 const socials = [
   { href: 'https://www.linkedin.com/in/rasool-fredericks', label: 'LinkedIn', icon: 'fab fa-linkedin' },
   { href: 'https://github.com/Rasoolking14', label: 'GitHub', icon: 'fab fa-github' },
-  { href: 'https://x.com/', label: 'X (Twitter)', icon: 'fab fa-x-twitter' },
 ];
 
 const experiences = [
   {
-    role: 'Senior Full-Stack Engineer',
-    period: '2019 \u2013 Present',
+    role: 'Front-End Developer',
+    period: '2025 \u2013 Present',
     points: [
-      'Architect and deliver scalable, multi-tenant SaaS platforms with event-driven APIs and granular role-based access control.',
-      'Design high-throughput, idempotent payment and data workflows with observability and automated reconciliation.',
-      'Build Kubernetes-native CI/CD pipelines using GitOps, preview environments, policy checks, and automated rollbacks.',
-      'Lead cloud infrastructure on AWS with Docker, CI/CD automation, and microservices architecture.',
+      'Build responsive, accessible interfaces from design mockups using HTML, CSS and JavaScript.',
+      'Develop reusable UI components with modern frameworks such as React and Vue.js.',
+      'Collaborate in team projects using Git and GitHub, managing branches and pull requests.',
+      'Write clean, maintainable code and ensure consistent, cross-browser layouts.',
     ],
   },
   {
-    role: 'Full-Stack Engineer',
-    period: '2016 \u2013 2019',
+    role: 'Web / Front-End Development Student',
+    period: '2025 \u2013 Present',
     points: [
-      'Developed and maintained modern web applications using React, Node.js, and PostgreSQL.',
-      'Improved front-end performance and developer experience through type-safe tooling and standardized scaffolding.',
-      'Collaborated on database design, API development, and deployment automation.',
+      'Studying Web / Front-End Development at Life-Choices Academy.',
+      'Apply best practices in responsive design, accessibility and version control.',
+      'Complete practical projects that simulate real-world development workflows.',
     ],
   },
 ];
