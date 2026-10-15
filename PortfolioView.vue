@@ -342,6 +342,15 @@ const projects = [
     repo: 'https://github.com/stephanbennett42-ctrl/applydirect-sa',
     thumb: `<img src="assets/img/project-applydirect.png" alt="ApplyDirect-SA application portal homepage" />`,
   },
+  {
+    tag: 'Front-End / Vue.js',
+    title: 'Personal Portfolio Website',
+    desc: 'A responsive personal portfolio built with Vue 3 and Vite. Features a component-based architecture, dark/light theme toggle, scroll-spy navigation, an animated hero, and a working contact form. Deployed on Railway.',
+    stack: ['Vue.js', 'Vite', 'JavaScript', 'CSS3'],
+    live: 'https://rasool-fredericks-portfolio-production.up.railway.app',
+    repo: 'https://github.com/Rasoolking14/portfolio',
+    thumb: `<img src="assets/img/project-portfolio.png" alt="Rasool Fredericks portfolio website homepage" />`,
+  },
 ];
 
 const certifications = [
