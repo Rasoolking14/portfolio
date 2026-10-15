@@ -1,16 +1,71 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rasool Fredericks - Senior Full-Stack Engineer</title>
+    <meta name="description" content="Rasool Fredericks - Senior Full-Stack Engineer with 8+ years building scalable, cloud-native web applications. React, Next.js, Node.js, TypeScript, AWS and PostgreSQL.">
+    <meta name="author" content="Rasool Fredericks">
+    <meta name="keywords" content="Rasool Fredericks, Full-Stack Engineer, Software Engineer, React, Next.js, Node.js, TypeScript, AWS, Cloud Architecture, Web Developer, Portfolio">
+    <link rel="canonical" href="https://rasoolking14.github.io/portfolio/">
+    <meta name="theme-color" content="#0A0A0A" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#F6F6F6" media="(prefers-color-scheme: light)">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Rasool Fredericks - Portfolio">
+    <meta property="og:title" content="Rasool Fredericks - Senior Full-Stack Engineer">
+    <meta property="og:description" content="Building scalable, cloud-native web applications with React, Node.js and AWS.">
+    <meta property="og:url" content="https://rasoolking14.github.io/portfolio/">
+    <meta property="og:image" content="https://rasoolking14.github.io/portfolio/assets/img/profile.png">
+    <meta property="og:image:alt" content="Portrait of Rasool Fredericks">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rasool Fredericks - Senior Full-Stack Engineer">
+    <meta name="twitter:description" content="Building scalable, cloud-native web applications with React, Node.js and AWS.">
+    <meta name="twitter:image" content="https://rasoolking14.github.io/portfolio/assets/img/profile.png">
+
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="assets/img/profile.png">
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Rasool Fredericks",
+            "jobTitle": "Senior Full-Stack Engineer",
+            "email": "mailto:fredericksrasool11@gmail.com",
+            "telephone": "+27678020783",
+            "url": "https://rasoolking14.github.io/portfolio/",
+            "image": "https://rasoolking14.github.io/portfolio/assets/img/profile.png",
+            "knowsAbout": ["React", "Next.js", "Node.js", "TypeScript", "AWS", "PostgreSQL", "Docker", "Kubernetes"],
+            "sameAs": [
+                "https://www.linkedin.com/in/rasool-fredericks",
+                "https://github.com/Rasoolking14"
+            ]
+        }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&family=Roboto:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="styles.css">
+    <script>
+        (function () {
+            try {
+                if (localStorage.getItem('rf-theme') === 'light') {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                }
+            } catch (e) {}
+        })();
+    </script>
 </head>
 <body>
+    <canvas id="starfield" aria-hidden="true"></canvas>
     <!-- Sticky Header & Navigation -->
     <header class="header">
         <nav class="nav container">
@@ -21,20 +76,26 @@
                     <span class="nav__status-text">Available for Hire</span>
                 </span>
             </div>
-            <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <div class="nav__menu" id="navMenu">
-                <ul class="nav__links">
-                    <li><a href="#about" class="nav__link">About</a></li>
-                    <li><a href="#skills" class="nav__link">Skills</a></li>
-                    <li><a href="#projects" class="nav__link">Projects</a></li>
-                    <li><a href="#certifications" class="nav__link">Certifications</a></li>
-                    <li><a href="#contact" class="nav__link">Contact</a></li>
-                </ul>
-                <a href="assets/Rasool_Fredericks_Resume.pdf" target="_blank" rel="noopener" class="nav__cta">Resume / CV</a>
+            <div class="nav__actions">
+                <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark mode" aria-pressed="false">
+                    <i class="fa-solid fa-sun"></i>
+                </button>
+                <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="nav__menu" id="navMenu">
+                    <ul class="nav__links">
+                        <li><a href="#about" class="nav__link">About</a></li>
+                        <li><a href="#experience" class="nav__link">Experience</a></li>
+                        <li><a href="#skills" class="nav__link">Skills</a></li>
+                        <li><a href="#projects" class="nav__link">Projects</a></li>
+                        <li><a href="#certifications" class="nav__link">Certifications</a></li>
+                        <li><a href="#contact" class="nav__link">Contact</a></li>
+                    </ul>
+                    <a href="assets/Rasool_Fredericks_Resume.pdf" target="_blank" rel="noopener" class="nav__cta">Resume / CV</a>
+                </div>
             </div>
         </nav>
     </header>
@@ -86,9 +147,12 @@
         <section class="section about" id="about">
             <div class="container about__grid">
                 <div class="about__left">
-                    <div class="avatar">
+                    <div class="avatar" id="avatarFlip" role="button" tabindex="0" aria-pressed="false" aria-label="Flip between formal and casual photo">
                         <div class="avatar__border"></div>
-                        <div class="avatar__inner"><img class="avatar__img" src="assets/img/profile.png" alt="Rasool Fredericks portrait" loading="lazy"></div>
+                        <div class="avatar__flip">
+                            <div class="avatar__face avatar__face--front"><img class="avatar__img" src="assets/img/profile.png" alt="Rasool Fredericks portrait" loading="lazy"></div>
+                            <div class="avatar__face avatar__face--back"><img class="avatar__img" src="assets/img/profile-casual.png" alt="Rasool Fredericks casual portrait" loading="lazy" onerror="this.onerror=null;this.src='assets/img/profile.png'"></div>
+                        </div>
                     </div>
                 </div>
                 <div class="about__right">
@@ -114,6 +178,45 @@
                         </article>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="section experience" id="experience">
+            <div class="container">
+                <h2 class="section__title">Experience</h2>
+                <p class="section__lead">A track record of architecting, shipping and scaling production systems.</p>
+                <ol class="timeline">
+                    <li class="timeline__item">
+                        <div class="timeline__marker" aria-hidden="true"></div>
+                        <div class="timeline__content">
+                            <div class="timeline__head">
+                                <h3 class="timeline__role">Senior Full-Stack Engineer</h3>
+                                <span class="timeline__period">2019 &ndash; Present</span>
+                            </div>
+                            <ul class="timeline__points">
+                                <li>Architect and deliver scalable, multi-tenant SaaS platforms with event-driven APIs and granular role-based access control.</li>
+                                <li>Design high-throughput, idempotent payment and data workflows with observability and automated reconciliation.</li>
+                                <li>Build Kubernetes-native CI/CD pipelines using GitOps, preview environments, policy checks, and automated rollbacks.</li>
+                                <li>Lead cloud infrastructure on AWS with Docker, CI/CD automation, and microservices architecture.</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="timeline__item">
+                        <div class="timeline__marker" aria-hidden="true"></div>
+                        <div class="timeline__content">
+                            <div class="timeline__head">
+                                <h3 class="timeline__role">Full-Stack Engineer</h3>
+                                <span class="timeline__period">2016 &ndash; 2019</span>
+                            </div>
+                            <ul class="timeline__points">
+                                <li>Developed and maintained modern web applications using React, Node.js, and PostgreSQL.</li>
+                                <li>Improved front-end performance and developer experience through type-safe tooling and standardized scaffolding.</li>
+                                <li>Collaborated on database design, API development, and deployment automation.</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ol>
             </div>
         </section>
 
@@ -173,129 +276,41 @@
                 <div class="projects__grid">
                     <article class="project-card">
                         <div class="project-card__thumb">
-                            <svg viewBox="0 0 600 340" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <defs>
-                                    <linearGradient id="p1" x1="0" y1="0" x2="1" y2="1">
-                                        <stop offset="0%" stop-color="#06B6D4"/>
-                                        <stop offset="100%" stop-color="#3B82F6"/>
-                                    </linearGradient>
-                                </defs>
-                                <rect width="600" height="340" rx="16" fill="#0F172A"/>
-                                <circle cx="300" cy="170" r="90" stroke="url(#p1)" stroke-width="3" fill="none" opacity="0.8"/>
-                                <circle cx="300" cy="170" r="40" stroke="url(#p1)" stroke-width="2" fill="none"/>
-                                <g opacity="0.9">
-                                    <line x1="300" y1="80" x2="300" y2="120" stroke="#06B6D4"/>
-                                    <line x1="300" y1="220" x2="300" y2="260" stroke="#06B6D4"/>
-                                    <line x1="210" y1="170" x2="250" y2="170" stroke="#06B6D4"/>
-                                    <line x1="350" y1="170" x2="390" y2="170" stroke="#06B6D4"/>
-                                </g>
-                            </svg>
+                            <img src="assets/img/project-hr-system.png" alt="ModernTech HR Management System dashboard" loading="lazy">
                         </div>
                         <div class="project-card__body">
-                            <span class="project-card__tag">Full-Stack SaaS</span>
-                            <h3 class="project-card__title">Enterprise Analytics Platform</h3>
-                            <p class="project-card__desc">A multi-tenant analytics suite delivering real-time dashboards and role-based access. Built for scale with event-driven APIs and granular permissions.</p>
+                            <span class="project-card__tag">Full-Stack HR Platform</span>
+                            <h3 class="project-card__title">ModernTech HR Management System</h3>
+                            <p class="project-card__desc">A full-stack HR management app for tracking employees, attendance, payroll, time off, and performance reviews. Built with role-based JWT auth and a normalised MySQL schema. I owned the payroll module.</p>
                             <div class="project-card__stack">
-                                <span class="stack-pill">Next.js</span>
                                 <span class="stack-pill">Node.js</span>
-                                <span class="stack-pill">AWS</span>
-                                <span class="stack-pill">PostgreSQL</span>
+                                <span class="stack-pill">Express</span>
+                                <span class="stack-pill">MySQL</span>
+                                <span class="stack-pill">JWT</span>
                             </div>
                             <div class="project-card__actions">
-                                <a href="#" class="proj-link" aria-label="Live site"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Site</a>
-                                <a href="#" class="proj-link" aria-label="GitHub repo"><i class="fab fa-github"></i> GitHub Repo</a>
+                                <a href="https://moderntech-hr-frontend.onrender.com" target="_blank" rel="noopener" class="proj-link" aria-label="Live site"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Site</a>
+                                <a href="https://github.com/nikitamullerr/Group-4_HRSystem_Project2" target="_blank" rel="noopener" class="proj-link" aria-label="GitHub repo"><i class="fab fa-github"></i> GitHub Repo</a>
                             </div>
                         </div>
                     </article>
 
                     <article class="project-card">
                         <div class="project-card__thumb">
-                            <svg viewBox="0 0 600 340" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <rect width="600" height="340" rx="16" fill="#0F172A"/>
-                                <g stroke="#06B6D4" stroke-width="2" fill="none" opacity="0.9">
-                                    <rect x="60" y="60" width="200" height="140" rx="12"/>
-                                    <rect x="340" y="140" width="200" height="140" rx="12"/>
-                                    <path d="M260 130 L340 170"/>
-                                    <path d="M340 170 L260 210"/>
-                                </g>
-                                <circle cx="160" cy="130" r="8" fill="#3B82F6"/>
-                                <circle cx="440" cy="210" r="8" fill="#3B82F6"/>
-                            </svg>
+                            <img src="assets/img/project-applydirect.png" alt="ApplyDirect-SA application portal homepage" loading="lazy">
                         </div>
                         <div class="project-card__body">
-                            <span class="project-card__tag">FinTech Platform</span>
-                            <h3 class="project-card__title">Real-Time Payments Gateway</h3>
-                            <p class="project-card__desc">Secure, high-throughput payment orchestration with idempotent processing and automated reconciliation. Designed for PCI-aware workflows and observability.</p>
+                            <span class="project-card__tag">Full-Stack Web Platform</span>
+                            <h3 class="project-card__title">ApplyDirect-SA</h3>
+                            <p class="project-card__desc">A centralised tertiary application portal and career directory for South African students. Aggregates course details and institutional requirements with dynamic search and filtering.</p>
                             <div class="project-card__stack">
-                                <span class="stack-pill">TypeScript</span>
-                                <span class="stack-pill">Node.js</span>
-                                <span class="stack-pill">Redis</span>
-                                <span class="stack-pill">AWS</span>
+                                <span class="stack-pill">Vue.js</span>
+                                <span class="stack-pill">Bootstrap 5</span>
+                                <span class="stack-pill">Express</span>
+                                <span class="stack-pill">MySQL</span>
                             </div>
                             <div class="project-card__actions">
-                                <a href="#" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Site</a>
-                                <a href="#" class="proj-link"><i class="fab fa-github"></i> GitHub Repo</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="project-card">
-                        <div class="project-card__thumb">
-                            <svg viewBox="0 0 600 340" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <rect width="600" height="340" rx="16" fill="#0F172A"/>
-                                <g stroke="#3B82F6" stroke-width="2" fill="none" opacity="0.9">
-                                    <rect x="70" y="70" width="460" height="40" rx="8"/>
-                                    <rect x="70" y="130" width="320" height="140" rx="8"/>
-                                    <rect x="410" y="130" width="120" height="60" rx="8"/>
-                                    <rect x="410" y="210" width="120" height="60" rx="8"/>
-                                </g>
-                                <circle cx="90" cy="90" r="4" fill="#06B6D4"/>
-                                <circle cx="105" cy="90" r="4" fill="#3B82F6"/>
-                                <circle cx="120" cy="90" r="4" fill="#94A3B8"/>
-                            </svg>
-                        </div>
-                        <div class="project-card__body">
-                            <span class="project-card__tag">Cloud Infrastructure</span>
-                            <h3 class="project-card__title">Kubernetes-Native CI/CD Platform</h3>
-                            <p class="project-card__desc">GitOps-driven delivery pipeline with preview environments, policy checks, and automated rollbacks. Accelerates safe releases with minimal toil.</p>
-                            <div class="project-card__stack">
-                                <span class="stack-pill">Kubernetes</span>
-                                <span class="stack-pill">Terraform</span>
-                                <span class="stack-pill">Docker</span>
-                                <span class="stack-pill">AWS</span>
-                            </div>
-                            <div class="project-card__actions">
-                                <a href="#" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Site</a>
-                                <a href="#" class="proj-link"><i class="fab fa-github"></i> GitHub Repo</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="project-card">
-                        <div class="project-card__thumb">
-                            <svg viewBox="0 0 600 340" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <rect width="600" height="340" rx="16" fill="#0F172A"/>
-                                <g stroke="#06B6D4" stroke-width="2" fill="none" opacity="0.8">
-                                    <path d="M120 90 L480 90 Q520 90 520 130 L520 210 Q520 250 480 250 L120 250 Q80 250 80 210 L80 130 Q80 90 120 90 Z"/>
-                                    <line x1="80" y1="150" x2="520" y2="150" stroke="#06B6D4"/>
-                                    <circle cx="480" cy="120" r="6" fill="#3B82F6"/>
-                                    <circle cx="460" cy="120" r="6" fill="#06B6D4"/>
-                                </g>
-                            </svg>
-                        </div>
-                        <div class="project-card__body">
-                            <span class="project-card__tag">Web Application</span>
-                            <h3 class="project-card__title">Developer Experience Toolkit</h3>
-                            <p class="project-card__desc">Type-safe CLI and internal tools to standardize scaffolding, migrations, and secrets. Improves consistency and reduces onboarding friction.</p>
-                            <div class="project-card__stack">
-                                <span class="stack-pill">TypeScript</span>
-                                <span class="stack-pill">Node.js</span>
-                                <span class="stack-pill">Redis</span>
-                                <span class="stack-pill">Docker</span>
-                            </div>
-                            <div class="project-card__actions">
-                                <a href="#" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Site</a>
-                                <a href="#" class="proj-link"><i class="fab fa-github"></i> GitHub Repo</a>
+                                <a href="https://github.com/stephanbennett42-ctrl/applydirect-sa" target="_blank" rel="noopener" class="proj-link" aria-label="GitHub repo"><i class="fab fa-github"></i> GitHub Repo</a>
                             </div>
                         </div>
                     </article>
@@ -312,21 +327,21 @@
                         <div class="cert-card__icon"><i class="fab fa-aws"></i></div>
                         <div class="cert-card__body">
                             <h3 class="cert-card__title">AWS Certified Solutions Architect - Associate</h3>
-                            <p class="cert-card__meta">Issued: 2024 â€¢ Amazon Web Services</p>
+                            <p class="cert-card__meta">Issued: 2024 • Amazon Web Services</p>
                         </div>
                     </article>
                     <article class="cert-card">
                         <div class="cert-card__icon"><i class="fa-solid fa-certificate"></i></div>
                         <div class="cert-card__body">
                             <h3 class="cert-card__title">Meta Senior Full-Stack Engineer Certificate</h3>
-                            <p class="cert-card__meta">Issued: 2025 â€¢ Meta</p>
+                            <p class="cert-card__meta">Issued: 2025 • Meta</p>
                         </div>
                     </article>
                     <article class="cert-card">
                         <div class="cert-card__icon"><i class="fa-solid fa-cubes"></i></div>
                         <div class="cert-card__body">
                             <h3 class="cert-card__title">Certified Kubernetes Application Developer (CKAD)</h3>
-                            <p class="cert-card__meta">Issued: 2023 â€¢ CNCF/Linux Foundation</p>
+                            <p class="cert-card__meta">Issued: 2023 • CNCF/Linux Foundation</p>
                         </div>
                     </article>
                 </div>
@@ -345,13 +360,18 @@
                         <li><i class="fa-solid fa-phone"></i> 0678020783</li>
                     </ul>
                     <div class="contact__socials">
-                        <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/rasool-fredericks" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/Rasoolking14" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
                         <a href="https://x.com/" target="_blank" rel="noopener" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
                     </div>
                 </div>
                 <div class="contact__form-wrap">
-                    <form class="contact-form" id="contactForm" novalidate>
+                    <!-- To receive messages in your inbox, create a free form at https://formspree.io
+                         and paste the endpoint (e.g. https://formspree.io/f/xxxxxxx) into data-endpoint below.
+                         If left empty, the form falls back to opening the visitor's email client. -->
+                    <form class="contact-form" id="contactForm" data-endpoint="" novalidate>
+                        <input type="hidden" name="_subject" value="New message from your portfolio">
+                        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;">
                         <div class="form-row">
                             <label class="form-label" for="name">Name</label>
                             <input class="form-input" type="text" id="name" name="name" autocomplete="name" required>

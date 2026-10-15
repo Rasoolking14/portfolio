@@ -1,4 +1,5 @@
-﻿<!-- Sticky Header & Navigation -->
+﻿<canvas id="starfield" aria-hidden="true"></canvas>
+<!-- Sticky Header & Navigation -->
     <header class="header">
         <nav class="nav container">
             <div class="nav__logo">
@@ -8,20 +9,26 @@
                     <span class="nav__status-text">Available for Hire</span>
                 </span>
             </div>
-            <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <div class="nav__menu" id="navMenu">
-                <ul class="nav__links">
-                    <li><a href="#about" class="nav__link">About</a></li>
-                    <li><a href="#skills" class="nav__link">Skills</a></li>
-                    <li><a href="#projects" class="nav__link">Projects</a></li>
-                    <li><a href="#certifications" class="nav__link">Certifications</a></li>
-                    <li><a href="#contact" class="nav__link">Contact</a></li>
-                </ul>
-                <a href="assets/Rasool_Fredericks_Resume.pdf" target="_blank" rel="noopener" class="nav__cta">Resume / CV</a>
+            <div class="nav__actions">
+                <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark mode" aria-pressed="false">
+                    <i class="fa-solid fa-sun"></i>
+                </button>
+                <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="nav__menu" id="navMenu">
+                    <ul class="nav__links">
+                        <li><a href="#about" class="nav__link">About</a></li>
+                        <li><a href="#experience" class="nav__link">Experience</a></li>
+                        <li><a href="#skills" class="nav__link">Skills</a></li>
+                        <li><a href="#projects" class="nav__link">Projects</a></li>
+                        <li><a href="#certifications" class="nav__link">Certifications</a></li>
+                        <li><a href="#contact" class="nav__link">Contact</a></li>
+                    </ul>
+                    <a href="https://rasoolking14.github.io/portfolio/assets/Rasool_Fredericks_Resume.pdf" target="_blank" rel="noopener" class="nav__cta">Resume / CV</a>
+                </div>
             </div>
         </nav>
     </header>

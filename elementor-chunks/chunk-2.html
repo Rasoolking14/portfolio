@@ -2,9 +2,12 @@
         <section class="section about" id="about">
             <div class="container about__grid">
                 <div class="about__left">
-                    <div class="avatar">
+                    <div class="avatar" id="avatarFlip" role="button" tabindex="0" aria-pressed="false" aria-label="Flip between formal and casual photo">
                         <div class="avatar__border"></div>
-                        <div class="avatar__inner"><img class="avatar__img" src="assets/img/profile.png" alt="Rasool Fredericks portrait" loading="lazy"></div>
+                        <div class="avatar__flip">
+                            <div class="avatar__face avatar__face--front"><img class="avatar__img" src="assets/img/profile.png" alt="Rasool Fredericks portrait" loading="lazy"></div>
+                            <div class="avatar__face avatar__face--back"><img class="avatar__img" src="assets/img/profile-casual.png" alt="Rasool Fredericks casual portrait" loading="lazy" onerror="this.onerror=null;this.src='assets/img/profile.png'"></div>
+                        </div>
                     </div>
                 </div>
                 <div class="about__right">
@@ -31,3 +34,42 @@
                     </div>
                 </div>
             </div></section>
+
+        <!-- Experience Section -->
+        <section class="section experience" id="experience">
+            <div class="container">
+                <h2 class="section__title">Experience</h2>
+                <p class="section__lead">A track record of architecting, shipping and scaling production systems.</p>
+                <ol class="timeline">
+                    <li class="timeline__item">
+                        <div class="timeline__marker" aria-hidden="true"></div>
+                        <div class="timeline__content">
+                            <div class="timeline__head">
+                                <h3 class="timeline__role">Senior Full-Stack Engineer</h3>
+                                <span class="timeline__period">2019 &ndash; Present</span>
+                            </div>
+                            <ul class="timeline__points">
+                                <li>Architect and deliver scalable, multi-tenant SaaS platforms with event-driven APIs and granular role-based access control.</li>
+                                <li>Design high-throughput, idempotent payment and data workflows with observability and automated reconciliation.</li>
+                                <li>Build Kubernetes-native CI/CD pipelines using GitOps, preview environments, policy checks, and automated rollbacks.</li>
+                                <li>Lead cloud infrastructure on AWS with Docker, CI/CD automation, and microservices architecture.</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="timeline__item">
+                        <div class="timeline__marker" aria-hidden="true"></div>
+                        <div class="timeline__content">
+                            <div class="timeline__head">
+                                <h3 class="timeline__role">Full-Stack Engineer</h3>
+                                <span class="timeline__period">2016 &ndash; 2019</span>
+                            </div>
+                            <ul class="timeline__points">
+                                <li>Developed and maintained modern web applications using React, Node.js, and PostgreSQL.</li>
+                                <li>Improved front-end performance and developer experience through type-safe tooling and standardized scaffolding.</li>
+                                <li>Collaborated on database design, API development, and deployment automation.</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>

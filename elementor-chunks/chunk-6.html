@@ -10,13 +10,18 @@
                         <li><i class="fa-solid fa-phone"></i> 0678020783</li>
                     </ul>
                     <div class="contact__socials">
-                        <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/rasool-fredericks" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/Rasoolking14" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
                         <a href="https://x.com/" target="_blank" rel="noopener" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
                     </div>
                 </div>
                 <div class="contact__form-wrap">
-                    <form class="contact-form" id="contactForm" novalidate>
+                    <!-- To receive messages in your inbox, create a free form at https://formspree.io
+                         and paste the endpoint (e.g. https://formspree.io/f/xxxxxxx) into data-endpoint below.
+                         If left empty, the form falls back to opening the visitor's email client. -->
+                    <form class="contact-form" id="contactForm" data-endpoint="" novalidate>
+                        <input type="hidden" name="_subject" value="New message from your portfolio">
+                        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;">
                         <div class="form-row">
                             <label class="form-label" for="name">Name</label>
                             <input class="form-input" type="text" id="name" name="name" autocomplete="name" required>
